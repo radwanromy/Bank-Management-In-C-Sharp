@@ -33,7 +33,7 @@ namespace Account_Type
             this.balance = balance;
 
         }
-        public void Deposit(double amount)
+        virtual public void Deposit(double amount)
         {
             balance += amount;
 

@@ -6,34 +6,28 @@ namespace Account_Type
 {
     class SavingsAccount:Account
     {
-        private int amount;
-        public int Amount
+
+        int transaction = 0;
+        int minimalNo = 3;
+
+        public SavingsAccount(string name, string accNo, double balance) : base(name, accNo, balance)
         {
-            get { return amount; }
-            set { amount = value; }
+
         }
-        private int trans;
-        public int Trans
+
+        override public void Deposit(double amount)
         {
-            get { return trans; }
-            set { trans = value; }
-        }
-        private int noTrans;
-        public int NoTrans
-        {
-            get { return noTrans; }
-            set { noTrans = value; }
-        }
-        public SavingsAccount() { }
-        public SavingsAccount(int amount,int trans,int noTrans,string name,string accNo, double balance) : base(name,accNo,balance)
-        {
-            if ( noTrans<trans)
+
+            if (transaction >= minimalNo)
             {
-                balance += amount;
-                
+                Console.WriteLine("You Can Not Have Any More Transaction For This Month.");
             }
             else
-                Console.WriteLine("Not following minimal number of monthly transaction");
+            {
+                this.balance = this.balance + amount;
+                transaction++;
+            }
+
         }
         public override void Withdraw(double amount)
         {
@@ -44,6 +38,7 @@ namespace Account_Type
             else
                 Console.WriteLine("Insufficient Balance To Withdraw The Ammount");
         }
+        
 
     }
 }
