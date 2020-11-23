@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Account_Type
 {
-    abstract class Overdarft
+    abstract class Overdarft : Account
     {
         private int overdraftLimit;
         public int OverdraftLimit

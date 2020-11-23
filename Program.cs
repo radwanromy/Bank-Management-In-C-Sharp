@@ -31,6 +31,8 @@ namespace Account_Type
             FixedAccount a3 = new FixedAccount("Radwan", "12121", 10000, 2015, 5);
             a2.ShowInfo();
             a3.ShowInfo();
+            Account a4= new SavingsAccount(1000, 3, 2, "Rahim", "12122", 10000);
+            Account a5 = new FixedAccount("Rahim", "12122", 10000, 2015, 5);
 
 
         }

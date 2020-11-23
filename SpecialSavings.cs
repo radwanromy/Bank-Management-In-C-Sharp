@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Account_Type
 {
-    abstract class SpecialSavings
+    abstract class SpecialSavings : Account
     {
         
         private int trans;
@@ -20,7 +20,7 @@ namespace Account_Type
             set { noTrans = value; }
         }
         public SpecialSavings() { }
-        public abstract SpecialSavings(double amount, int trans, int noTrans, string name, string accNo, double balance) : base(name, accNo, balance)
+        public  SpecialSavings(double amount, int trans, int noTrans, string name, string accNo, double balance) : base(name, accNo, balance)
         {
             this.trans = trans;
             this.noTrans = noTrans;
