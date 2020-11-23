@@ -29,22 +29,20 @@ namespace Account_Type
         {
             if ( noTrans<trans)
             {
-                this.trans = trans;
-                this.amount = amount;
-                this.noTrans = noTrans;
                 balance += amount;
+                
             }
             else
                 Console.WriteLine("Not following minimal number of monthly transaction");
         }
         public override void Withdraw(double amount)
         {
-            if(balance-amount>=500)
+            if (balance - amount >= 500)
             {
                 balance -= amount;
             }
             else
-                Console.WriteLine("Insufficient Balance");
+                Console.WriteLine("Insufficient Balance To Withdraw The Ammount");
         }
 
     }
