@@ -73,7 +73,7 @@ namespace Account_Type
             Console.WriteLine("|||||||||||||||||||||||Special Savings Account Withdraw Check|||||||||||||||||||||||");
             Console.WriteLine();
 
-            s2.Withdraw(8800);
+            s2.Withdraw(3300);
             s2.ShowInfo();
         }
     }
