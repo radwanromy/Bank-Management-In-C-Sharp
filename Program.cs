@@ -65,7 +65,6 @@ namespace Account_Type
             SpecialSavings s1= new SpecialSavings("kahim", "12123", 10000);
             SpecialSavings s2 = new SpecialSavings("Fahim", "12124", 10000);
             Console.WriteLine();
-            Console.WriteLine();
             s1.ShowInfo();
             s1.Deposit(100000);
             s1.ShowInfo();
@@ -75,6 +74,23 @@ namespace Account_Type
 
             s2.Withdraw(3300);
             s2.ShowInfo();
+
+            Console.WriteLine();
+            Console.WriteLine("|||||||||||||||||||||||OverDraft Account Check|||||||||||||||||||||||");
+            Console.WriteLine();
+            Overdraft o1 = new Overdraft("Zahim", "12123", 10000);
+            Overdraft o2 = new Overdraft("Jahim", "12124", 10000);
+            Console.WriteLine();
+            o1.ShowInfo();
+            o1.Deposit(100000);
+            o1.ShowInfo();
+            Console.WriteLine();
+            Console.WriteLine("|||||||||||||||||||||||OverDraft Account Withdraw Check|||||||||||||||||||||||");
+            Console.WriteLine();
+
+            o2.Withdraw(3300);
+            o2.ShowInfo();
+
         }
     }
 }
