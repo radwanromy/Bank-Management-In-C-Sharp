@@ -4,34 +4,32 @@ using System.Text;
 
 namespace Account_Type
 {
-    abstract class SpecialSavings : Account
+    class SpecialSavings : Account
     {
-        
-        private int trans;
-        public int Trans
-        {
-            get { return trans; }
-            set { trans = value; }
-        }
-        private int noTrans;
-        public int NoTrans
-        {
-            get { return noTrans; }
-            set { noTrans = value; }
-        }
+
+        int transaction = 0;
+        int minimalNo = 3;
+
         public SpecialSavings() { }
-        public  SpecialSavings(double amount, int trans, int noTrans, string name, string accNo, double balance) : base(name, accNo, balance)
+        public SpecialSavings(string name, string accNo, double balance) : base(name, accNo, balance)
         {
-            this.trans = trans;
-            this.noTrans = noTrans;
-            if (noTrans < trans)
+        }
+
+        override public void Deposit(double amount)
+        {
+
+            if (transaction >= minimalNo)
             {
-                
-                balance += amount;
+                Console.WriteLine("You Can Not Have Any More Transaction For This Month.");
             }
             else
-                Console.WriteLine("Not following minimal number of monthly transaction");
+            {
+                this.balance = this.balance + amount;
+                transaction++;
+            }
+
         }
+        
         public override void Withdraw(double amount)
         {
 
